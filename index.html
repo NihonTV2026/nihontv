@@ -5,25 +5,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NihonTV - Canais Japoneses Ao Vivo</title>
+<title>NihonTV - TV Japonesa Ao Vivo Grátis</title>
 
-<!-- SEO -->
-<meta name="description" content="Assista canais japoneses ao vivo grátis. Nippon TV, Fuji TV, TBS e mais. Projeto criado por Ildebrando Leandro, especialista em marketing digital.">
-<meta name="keywords" content="tv japonesa ao vivo, nippon tv online, fuji tv live, tbs ao vivo, tv asahi stream, assistir tv japonesa grátis">
-<meta name="author" content="Ildebrando Leandro">
+<meta name="description" content="Assista canais japoneses ao vivo grátis. NihonTV com streaming de TV japonesa, anime, notícias e entretenimento direto do Japão.">
+<meta name="keywords" content="tv japonesa ao vivo, assistir tv japão, canais japoneses online, nihon tv, fuji tv ao vivo, anime ao vivo">
+<meta name="author" content="NihonTV">
+<meta name="robots" content="index, follow">
 
-<!-- SOCIAL -->
+<link rel="canonical" href="https://nihontv2026.github.io/nihontv/">
+
+<!-- Google Verification -->
+<meta name="google-site-verification" content="TQcHHEOLtreLOdEBXt1VTbqPmk6oWtSBQwACCyimwDs">
+
+<!-- Open Graph (Facebook / WhatsApp) -->
 <meta property="og:title" content="NihonTV - TV Japonesa Ao Vivo">
-<meta property="og:description" content="Assista canais japoneses ao vivo grátis. Plataforma criada por Ildebrando Leandro.">
-<meta property="og:image" content="professor.jpeg">
+<meta property="og:description" content="Assista canais japoneses ao vivo grátis">
+<meta property="og:image" content="https://nihontv2026.github.io/nihontv/neonlogo.png">
+<meta property="og:url" content="https://nihontv2026.github.io/nihontv/">
 <meta property="og:type" content="website">
 
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NihonTV - TV Japonesa">
+<meta name="twitter:description" content="Canais japoneses ao vivo grátis">
+<meta name="twitter:image" content="https://nihontv2026.github.io/nihontv/neonlogo.png">
+
+<link rel="icon" href="neonlogo.png">
+
+<!-- HLS PLAYER -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
-<link rel="icon" href="neonlogo.png?v=1">
 <style>
 
-/* BASE */
 body{
     margin:0;
     font-family:Arial;
@@ -31,7 +44,6 @@ body{
     color:#fff;
 }
 
-/* HEADER */
 .header{
     background:#202020;
     padding:15px;
@@ -40,73 +52,20 @@ body{
     font-weight:bold;
 }
 
-/* 🔥 BANNER CORRIGIDO */
-.banner{
-    position:relative;
-    height:320px;
-    background-image:url('professor.jpeg');
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:right center;
-    background-color:#000;
-    display:flex;
-    align-items:center;
-    padding-left:30px;
-}
-
-.banner::before{
-    content:'';
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
-}
-
-.banner-content{
-    position:relative;
-    z-index:2;
-    max-width:400px;
-}
-
-.banner h1{
-    font-size:32px;
-    margin-bottom:10px;
-}
-
-.banner p{
-    color:#ccc;
-    font-size:14px;
-}
-
-.banner button{
-    padding:10px 20px;
-    background:#00c3ff;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.banner button:hover{
-    background:#0099cc;
-}
-
-/* CONTAINER */
 .container{
     padding:15px;
 }
 
-/* PLAYER */
 #player{
     width:100%;
-    height:400px;
+    height:420px;
     background:black;
     margin-bottom:20px;
 }
 
-/* GRID */
 .video-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
     gap:15px;
 }
 
@@ -123,7 +82,7 @@ body{
 
 .card img{
     width:100%;
-    height:140px;
+    height:150px;
     object-fit:contain;
     background:black;
 }
@@ -140,58 +99,41 @@ button{
     color:#fff;
     border-radius:5px;
     cursor:pointer;
+    margin-top:5px;
 }
 
 button:hover{
     background:darkred;
 }
 
-/* RESPONSIVO */
-@media(max-width:768px){
-    .banner{
-        height:220px;
-        background-position:center;
-        background-size:contain;
-        padding:15px;
-    }
+.destaque{
+    border:2px solid #00c3ff;
+    box-shadow:0 0 15px rgba(0,195,255,0.5);
+}
 
-    .banner h1{
-        font-size:22px;
-    }
-
-    #player{
-        height:250px;
-    }
+.destaque:hover{
+    transform:scale(1.07);
 }
 
 .tv{
-
-    text-decoration: none;
-    color: #fff;
+    text-decoration:none;
+    color:#fff;
 }
 
 </style>
+
 </head>
-    
+
 <body>
 
-<div class="header"> <a class="tv" href="index1.html" target="_blank">NihonTV - Ao Vivo</a> </div>
- 
-<!-- 🔥 SEU BANNER -->
-<div class="banner">
-    <div class="banner-content">
-        <h1>Ildebrando Leandro</h1>
-        <p>
-            Especialista em Marketing Digital, Web Design e estratégias online.
-            Criador da plataforma NihonTV focada em streaming e crescimento digital.
-        </p>
-        <button onclick="window.open('https://professorildebrandoleandro.github.io/Ildebrando.html')">
-            Acessar Perfil
-        </button>
-    </div>
+<div class="header">
+<a class="tv" href="index.html">NihonTV - Ao Vivo</a>
 </div>
 
 <div class="container">
+
+<h1>TV Japonesa Ao Vivo - NihonTV</h1>
+<p>Assista canais japoneses ao vivo grátis como Nippon TV, Fuji TV, TBS e TV Asahi. Conteúdo direto do Japão com entretenimento, notícias e cultura japonesa.</p>
 
 <video id="player" controls></video>
 
@@ -229,11 +171,20 @@ TV Asahi
 </div>
 </div>
 
+<div class="card destaque">
+<a href="https://professorildebrandoleandro.github.io/Ildebrando.html" target="_blank">
+<img src="professor.jpeg">
+<div class="card-body">
+Ildebrando Leandro
+<button>Ver Perfil</button>
+</div>
+</a>
+</div>
+
 </div>
 </div>
 
 <script>
-
 function play(url){
     const video = document.getElementById('player');
 
@@ -247,11 +198,10 @@ function play(url){
 
     video.play();
 }
-
 </script>
 
-    <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "366872eec29c4c18ba0c2cfb7938d2d3"}'></script><!-- End Cloudflare Web Analytics -->
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "366872eec29c4c18ba0c2cfb7938d2d3"}'></script>
 
-    
 </body>
 </html>
