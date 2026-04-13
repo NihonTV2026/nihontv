@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NihonTV - Canais Japoneses Ao Vivo</title>
+
+<!-- SEO -->
+<meta name="description" content="Assista canais japoneses ao vivo grátis. Nippon TV, Fuji TV, TBS e mais. Projeto criado por Ildebrando Leandro, especialista em marketing digital.">
+<meta name="keywords" content="tv japonesa ao vivo, nippon tv online, fuji tv live, tbs ao vivo, tv asahi stream, assistir tv japonesa grátis">
+<meta name="author" content="Ildebrando Leandro">
+
+<!-- SOCIAL -->
+<meta property="og:title" content="NihonTV - TV Japonesa Ao Vivo">
+<meta property="og:description" content="Assista canais japoneses ao vivo grátis. Plataforma criada por Ildebrando Leandro.">
+<meta property="og:image" content="professor.jpeg">
+<meta property="og:type" content="website">
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<link rel="icon" href="neonlogo.png?v=1">
+
+<style>
+
+/* BASE */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* HEADER */
+.header{
+    background:#202020;
+    padding:15px;
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* 🔥 BANNER CORRIGIDO */
+.banner{
+    position:relative;
+    height:320px;
+    background-image:url('professor.jpeg');
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:right center;
+    background-color:#000;
+    display:flex;
+    align-items:center;
+    padding-left:30px;
+}
+
+.banner::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+}
+
+.banner-content{
+    position:relative;
+    z-index:2;
+    max-width:400px;
+}
+
+.banner h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.banner p{
+    color:#ccc;
+    font-size:14px;
+}
+
+.banner button{
+    padding:10px 20px;
+    background:#00c3ff;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.banner button:hover{
+    background:#0099cc;
+}
+
+/* CONTAINER */
+.container{
+    padding:15px;
+}
+
+/* PLAYER */
+#player{
+    width:100%;
+    height:400px;
+    background:black;
+    margin-bottom:20px;
+}
+
+/* GRID */
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#1c1c1c;
+    border-radius:8px;
+    overflow:hidden;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:contain;
+    background:black;
+}
+
+.card-body{
+    padding:10px;
+}
+
+button{
+    width:100%;
+    padding:8px;
+    background:red;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .banner{
+        height:220px;
+        background-position:center;
+        background-size:contain;
+        padding:15px;
+    }
+
+    .banner h1{
+        font-size:22px;
+    }
+
+    #player{
+        height:250px;
+    }
+}
+
+.tv{
+
+    text-decoration: none;
+    color: #fff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header"> <a class="tv" href="index1.html" target="_blank">NihonTV - Ao Vivo</a> </div>
+ 
+<!-- 🔥 SEU BANNER -->
+<div class="banner">
+    <div class="banner-content">
+        <h1>Ildebrando Leandro</h1>
+        <p>
+            Especialista em Marketing Digital, Web Design e estratégias online.
+            Criador da plataforma NihonTV focada em streaming e crescimento digital.
+        </p>
+        <button onclick="window.open('https://professorildebrandoleandro.github.io/Ildebrando.html')">
+            Acessar Perfil
+        </button>
+    </div>
+</div>
+
+<div class="container">
+
+<video id="player" controls></video>
+
+<div class="video-grid">
+
+<div class="card">
+<img src="Nippon_TV_logo_2014.svg.png">
+<div class="card-body">
+Nippon TV
+<button onclick="play('https://nl.utako.moe/Nippon_TV/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="TBS_2004_logo.svg.png">
+<div class="card-body">
+TBS
+<button onclick="play('https://nl.utako.moe/TBS/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="Fuji_tv_logo.png">
+<div class="card-body">
+Fuji TV
+<button onclick="play('https://nl.utako.moe/Fuji_TV/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="asahi tv.png">
+<div class="card-body">
+TV Asahi
+<button onclick="play('https://nl.utako.moe/TV_Asahi/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+
+function play(url){
+    const video = document.getElementById('player');
+
+    if(Hls.isSupported()){
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    }else{
+        video.src = url;
+    }
+
+    video.play();
+}
+
+</script>
+
+</body>
+</html>
