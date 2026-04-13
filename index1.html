@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NihonTV</title>
+<title>NihonTV - TV Japonesa Ao Vivo Grátis</title>
 
+<meta name="description" content="Assista canais japoneses ao vivo grátis. NihonTV com streaming de TV japonesa, anime, notícias e entretenimento direto do Japão.">
+<meta name="keywords" content="tv japonesa ao vivo, assistir tv japão, canais japoneses online, nihon tv, fuji tv ao vivo, anime ao vivo">
+<meta name="author" content="NihonTV">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://nihontv2026.github.io/nihontv/">
+
+<!-- Google Verification -->
+<meta name="google-site-verification" content="TQcHHEOLtreLOdEBXt1VTbqPmk6oWtSBQwACCyimwDs">
+
+<!-- Open Graph (Facebook / WhatsApp) -->
+<meta property="og:title" content="NihonTV - TV Japonesa Ao Vivo">
+<meta property="og:description" content="Assista canais japoneses ao vivo grátis">
+<meta property="og:image" content="https://nihontv2026.github.io/nihontv/neonlogo.png">
+<meta property="og:url" content="https://nihontv2026.github.io/nihontv/">
+<meta property="og:type" content="website">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NihonTV - TV Japonesa">
+<meta name="twitter:description" content="Canais japoneses ao vivo grátis">
+<meta name="twitter:image" content="https://nihontv2026.github.io/nihontv/neonlogo.png">
+
+<link rel="icon" href="neonlogo.png">
+
+<!-- HLS PLAYER -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
-<link rel="icon" href="neonlogo.png?v=1">
-
 
 <style>
 
@@ -82,7 +106,6 @@ button:hover{
     background:darkred;
 }
 
-/* 🔥 DESTAQUE SUA FOTO */
 .destaque{
     border:2px solid #00c3ff;
     box-shadow:0 0 15px rgba(0,195,255,0.5);
@@ -90,32 +113,27 @@ button:hover{
 
 .destaque:hover{
     transform:scale(1.07);
-    box-shadow:0 0 25px rgba(0,195,255,1);
-}
-
-.destaque img{
-    object-fit:cover;
-}
-
-.destaque a{
-    text-decoration:none;
-    color:white;
 }
 
 .tv{
-
-    text-decoration: none;
-    color: #fff;
+    text-decoration:none;
+    color:#fff;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="header"> <a class="tv" href="index.html" target="_blank">NihonTV - Ao Vivo</a> </div>
+<div class="header">
+<a class="tv" href="index.html">NihonTV - Ao Vivo</a>
+</div>
 
 <div class="container">
+
+<h1>TV Japonesa Ao Vivo - NihonTV</h1>
+<p>Assista canais japoneses ao vivo grátis como Nippon TV, Fuji TV, TBS e TV Asahi. Conteúdo direto do Japão com entretenimento, notícias e cultura japonesa.</p>
 
 <video id="player" controls></video>
 
@@ -153,7 +171,6 @@ TV Asahi
 </div>
 </div>
 
-<!-- 🔥 SUA FOTO CLICÁVEL -->
 <div class="card destaque">
 <a href="https://professorildebrandoleandro.github.io/Ildebrando.html" target="_blank">
 <img src="professor.jpeg">
@@ -168,7 +185,6 @@ Ildebrando Leandro
 </div>
 
 <script>
-
 function play(url){
     const video = document.getElementById('player');
 
@@ -182,8 +198,10 @@ function play(url){
 
     video.play();
 }
-
 </script>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "366872eec29c4c18ba0c2cfb7938d2d3"}'></script>
 
 </body>
 </html>
