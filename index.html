@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NihonTV - TV Japonesa Ao Vivo Grátis</title>
+
+<meta name="description" content="Assista canais japoneses ao vivo grátis. NihonTV com streaming de TV japonesa, anime, notícias e entretenimento direto do Japão.">
+<meta name="keywords" content="tv japonesa ao vivo, assistir tv japão, canais japoneses online, nihon tv, fuji tv ao vivo, anime ao vivo">
+<meta name="author" content="NihonTV">
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://nihontv2026.github.io/nihontv/">
+
+<!-- GOOGLE -->
+<meta name="google-site-verification" content="TQcHHEOLtreLOdEBXt1VTbqPmk6oWtSBQwACCyimwDs">
+
+<!-- FACEBOOK / WHATSAPP -->
+<meta property="og:title" content="NihonTV - TV Japonesa Ao Vivo">
+<meta property="og:description" content="Assista canais japoneses ao vivo grátis">
+<meta property="og:image" content="https://nihontv2026.github.io/nihontv/professor.jpeg">
+<meta property="og:url" content="https://nihontv2026.github.io/nihontv/">
+<meta property="og:type" content="website">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NihonTV - TV Japonesa">
+<meta name="twitter:description" content="Canais japoneses ao vivo grátis">
+<meta name="twitter:image" content="https://nihontv2026.github.io/nihontv/professor.jpeg">
+
+<link rel="icon" href="neonlogo.png">
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0f0f0f;
+    color:#fff;
+}
+
+/* 🔥 BANNER IGUAL AO SEU, MAS AJUSTADO */
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px;
+    background:#000;
+    gap:20px;
+}
+
+.hero-text{
+    max-width:450px;
+}
+
+.hero-text h1{
+    font-size:36px;
+    margin-bottom:10px;
+
+    text-shadow:
+        0 0 10px #00c3ff,
+        0 0 20px #00c3ff;
+}
+
+.hero-text p{
+    color:#ccc;
+    margin-bottom:15px;
+}
+
+.hero-text a{
+    display:inline-block;
+    padding:12px 25px;
+    background:#00c3ff;
+    color:#000;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+/* 🔥 FOTO CORRIGIDA */
+.hero-img{
+    max-width:600px;
+    width:100%;
+}
+
+.hero-img img{
+    width:100%;
+    height:auto;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+/* CONTEÚDO */
+.container{
+    padding:15px;
+}
+
+#player{
+    width:100%;
+    height:420px;
+    background:black;
+    margin-bottom:20px;
+}
+
+.video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#1c1c1c;
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:150px;
+    object-fit:contain;
+}
+
+.card-body{
+    padding:10px;
+}
+
+button{
+    width:100%;
+    padding:8px;
+    background:red;
+    border:none;
+    color:#fff;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkred;
+}
+
+/* 📱 MOBILE */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero-text{
+        max-width:100%;
+    }
+
+    .hero-img{
+        max-width:100%;
+    }
+
+    #player{
+        height:250px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- 🔥 BANNER ORIGINAL AJUSTADO -->
+<div class="hero">
+
+    <div class="hero-text">
+        <h1> Ildebrando Leandro</h1>
+        <p>
+            Especialista em Marketing Digital, Web Design e estratégias online.
+            Criador da plataforma NihonTV focada em streaming e crescimento digital.
+        </p>
+
+        <a href="https://professorildebrandoleandro.github.io/Ildebrando.html" target="_blank">
+            Acessar Perfil
+        </a>
+    </div>
+
+    <div class="hero-img">
+    <a href="index1.html">
+        <img src="professor.jpeg" alt="Ildebrando Leandro">
+    </a>
+</div>
+
+</div>
+
+<div class="container">
+
+<video id="player" controls></video>
+
+<div class="video-grid">
+
+<div class="card">
+<img src="Nippon_TV_logo_2014.svg.png">
+<div class="card-body">
+Nippon TV
+<button onclick="play('https://nl.utako.moe/Nippon_TV/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="TBS_2004_logo.svg.png">
+<div class="card-body">
+TBS
+<button onclick="play('https://nl.utako.moe/TBS/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="Fuji_tv_logo.png">
+<div class="card-body">
+Fuji TV
+<button onclick="play('https://nl.utako.moe/Fuji_TV/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+<div class="card">
+<img src="asahi tv.png">
+<div class="card-body">
+TV Asahi
+<button onclick="play('https://nl.utako.moe/TV_Asahi/index.m3u8')">Assistir</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function play(url){
+    const video = document.getElementById('player');
+
+    if(Hls.isSupported()){
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    }else{
+        video.src = url;
+    }
+
+    video.play();
+}
+</script>
+
+<!-- Cloudflare Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+data-cf-beacon='{"token": "366872eec29c4c18ba0c2cfb7938d2d3"}'>
+</script>
+
+</body>
+</html>
