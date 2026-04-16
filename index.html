@@ -2,24 +2,24 @@
 <html lang="pt-br">
 <head>
 
-<!-- SEO -->
+<!-- SEO BASE -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>NihonTV - TV Japonesa, TV Brasil, UFC, Filmes, Séries e Desenhos Ao Vivo Grátis</title>
-<meta name="description" content="Assista canais japoneses ao vivo grátis. NihonTV com streaming de TV japonesa, anime, notícias e entretenimento direto do Japão.">
-<meta name="keywords" content="tv japonesa ao vivo, assistir tv japão, canais japoneses online, nihon tv, fuji tv ao vivo, anime ao vivo">
+<title>NihonTV - TV Japonesa, Brasil, UFC, Filmes, Séries e Desenhos Ao Vivo Grátis</title>
+
+<meta name="description" content="Assista TV japonesa, canais do Brasil, UFC Combate, HBO, Telecine, filmes, séries, desenhos e muito mais AO VIVO grátis online.">
+<meta name="keywords" content="tv ao vivo gratis, tv japonesa ao vivo, assistir tv brasil, ufc combate ao vivo, filmes online gratis, telecine ao vivo, hbo online, desenhos ao vivo, anime ao vivo, canais online gratis">
 <meta name="author" content="NihonTV">
 <meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
 
 <link rel="canonical" href="https://nihontv2026.github.io/nihontv/">
 
-<!-- GOOGLE -->
-<meta name="google-site-verification" content="TQcHHEOLtreLOdEBXt1VTbqPmk6oWtSBQwACCyimwDs">
-
-<!-- FACEBOOK / WHATSAPP (CORRIGIDO E FORTE) -->
-<meta property="og:title" content="NihonTV - TV Japonesa, Brasileiros, UFC, Filmes e Desenhos Ao Vivo">
-<meta property="og:description" content="Assista canais japoneses, TV brasileira, UFC Combate, HBO, Telecine, filmes, séries, desenhos e muito mais AO VIVO grátis.">
+<!-- OPEN GRAPH (WHATSAPP / FACEBOOK) -->
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="NihonTV - TV Ao Vivo Grátis (Japão, Brasil, Filmes, UFC, Desenhos)">
+<meta property="og:description" content="Assista canais ao vivo grátis: Japão, Brasil, UFC, filmes, séries, desenhos e muito mais.">
 <meta property="og:image" content="https://nihontv2026.github.io/nihontv/professor-og.png">
 <meta property="og:image:secure_url" content="https://nihontv2026.github.io/nihontv/professor-og.png">
 <meta property="og:image:type" content="image/png">
@@ -31,8 +31,8 @@
 
 <!-- TWITTER -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="NihonTV - TV Japonesa">
-<meta name="twitter:description" content="Canais japoneses ao vivo grátis">
+<meta name="twitter:title" content="NihonTV - TV Ao Vivo Grátis">
+<meta name="twitter:description" content="Canais ao vivo: Japão, Brasil, filmes, UFC, desenhos e muito mais.">
 <meta name="twitter:image" content="https://nihontv2026.github.io/nihontv/professor-og.png">
 
 <link rel="icon" href="neonlogo.png">
@@ -48,7 +48,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-62B6HQR4W1');
 </script>
-    
+
 <style>
 
 /* BASE */
@@ -233,11 +233,12 @@ TBS
 </div>
 </div>
 
+<!-- SPACE -->
 <div class="card">
-<img src="rtb1.jpg">
+<img src="space.png">
 <div class="card-body">
-TV Portugal
-<button onclick="play('https://streaming-live.rtp.pt/liverepeater/rtp1.smil/playlist.m3u8')">
+SAPACE
+<button onclick="playIframe('https://redecanaistv.ph/player3/ch.php?canal=space')">
 Assistir
 </button>
 </div>
@@ -819,7 +820,9 @@ function playIframe(url){
 
 <script>
 
-/* PLAYER HLS */
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
 function play(url){
     const box = document.getElementById('playerBox');
 
@@ -834,10 +837,11 @@ function play(url){
         video.src = url;
     }
 
+    }
+
     video.play();
 }
 
-/* PLAYER IFRAME */
 function playIframe(url){
     const box = document.getElementById('playerBox');
 
@@ -845,11 +849,12 @@ function playIframe(url){
         <iframe 
         src="${url}" 
         style="width:100%; height:100%; border:none;"
-        allowfullscreen>
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin"
+        referrerpolicy="no-referrer">
         </iframe>
     `;
 }
-
 </script>
 
 </body>
