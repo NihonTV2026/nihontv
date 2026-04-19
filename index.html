@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -59,99 +60,70 @@ body{
     color:#fff;
 }
 
-/* HERO */
-/* HERO CORRIGIDO */
+/* HERO (SUA FOTO) */
 .hero{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:40px;
+    padding:30px;
     background:#000;
-    gap:30px;
-    flex-wrap:wrap;
+    gap:20px;
 }
 
-/* TEXTO */
 .hero-text{
     max-width:500px;
-    z-index:2;
 }
 
 .hero-text h1{
-    font-size:40px;
-
-    background: linear-gradient(90deg, #ffffff, #00c3ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 5px #b5eaf7,
-        0 0 10px #b5eaf7,
-        0 0 20px #b5eaf7,
-        0 0 40px #b5eaf7,
+    font-size:36px;
+    margin-bottom:10px;
+    text-shadow:0 0 10px #00c3ff;
 }
 
 .hero-text p{
-    margin-top:10px;
     color:#ccc;
 }
 
-/* BOTÃO */
 .hero-text a{
     display:inline-block;
-    margin-top:20px;
     padding:12px 25px;
     background:#00c3ff;
     color:#000;
     border-radius:6px;
     text-decoration:none;
-    font-weight:bold;
-    box-shadow:0 0 10px #00c3ff;
-    transition:0.3s;
+    margin-top:10px;
 }
 
-.hero-text a:hover{
-    background:#00ffcc;
-    box-shadow:0 0 20px #00ffcc;
-}
-
-/* IMAGEM */
+/* FOTO */
 .hero-img{
-    max-width:550px;
-    width:100%;
-    display:flex;
-    justify-content:center;
+    max-width:500px;
 }
 
 .hero-img img{
     width:100%;
     border-radius:10px;
-    box-shadow:0 0 20px rgba(0,195,255,0.5);
 }
 
 /* PLAYER */
-#playerBox{
-    width:95%;              /* aumenta largura */
-    max-width:1200px;       /* controla no PC grande */
-    height:520px;           /* mantém altura que você gostou */
-    margin:20px auto;       /* centraliza */
-
+.player-box{
+    width:100%;
+    height:420px;
     background:#000;
-    border-radius:12px;
+    margin:20px 0;
+    border-radius:10px;
     overflow:hidden;
-    position:relative;
-
-    box-shadow:
-        0 0 15px #00f0ff,
-        0 0 30px #00f0ff,
-        0 0 60px #00f0ff;
 }
+
+#player{
+    width:100%;
+    height:100%;
+}
+
 /* GRID */
 .video-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:15px;
-    padding:15px;
 }
 
 /* CARD */
@@ -164,41 +136,50 @@ body{
 
 .card:hover{
     transform:scale(1.05);
-    box-shadow:0 0 15px #00f0ff;
 }
 
+/* IMAGEM CORRIGIDA */
 .card img{
     width:100%;
-    height:110px;
+    height:140px;
     object-fit:contain;
     background:#000;
 }
 
-/* BOTÃO NEON */
+/* TEXTO */
+.card-body{
+    padding:10px;
+}
+
+/* BOTÃO */
 button{
     width:100%;
     padding:10px;
-    background:#111;
+    background:red;
     border:none;
     color:#fff;
+    border-radius:5px;
     cursor:pointer;
-    transition:0.3s;
 }
 
 button:hover{
-    background:#00f0ff;
-    color:#000;
-    box-shadow:
-        0 0 10px #00f0ff,
-        0 0 20px #00f0ff,
-        0 0 40px #00f0ff;
+    background:darkred;
 }
 
-button:active{
-    background:red;
-    box-shadow:
-        0 0 10px red,
-        0 0 20px red;
+/* MOBILE */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .video-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .player-box{
+        height:250px;
+    }
 }
 
 </style>
@@ -206,6 +187,7 @@ button:active{
 </head>
 
 <body>
+
 <!-- HERO -->
 <div class="hero">
 
@@ -226,17 +208,14 @@ Acessar Perfil
 
 </div>
 
-
 <!-- PLAYER -->
-<div id="playerBox">
-    <video id="player" controls style="width:100%; height:100%;"></video>
+<div class="player-box" id="playerBox">
+  <video id="player" controls style="width:100%; height:100%;"></video>
 </div>
 
-<h2 style="padding:15px;">📺 Canais</h2>
+<h2 style="padding-left:15px;">📺 Canais</h2>
 
-<div class="video-grid">
-
-<!-- EXEMPLOS (SEUS CANAIS MANTIDOS) -->
+<d class="video-grid">
 
 <!-- JAPONESES -->
 <div class="card">
@@ -765,69 +744,118 @@ Assistir
 </button>
 </div>
 </div>
-</div>
 
-<!-- CONTINUA IGUAL COM TODOS OS SEUS CANAIS -->
 
+<!-- SCRIPT -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
 
-/* PLAYER HLS (m3u8 direto) */
+/* PLAYER HLS */
 function play(url){
     const box = document.getElementById('playerBox');
 
-    box.innerHTML = `
-        <video id="player" controls autoplay style="width:100%; height:100%;"></video>
-    `;
-
+    box.innerHTML = '<video id="player" controls style="width:100%; height:100%;"></video>';
     const video = document.getElementById('player');
 
-    if (Hls.isSupported()) {
+    if(Hls.isSupported()){
         const hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
-    } else {
+    }else{
         video.src = url;
     }
 
     video.play();
-
-    // efeito neon
-    box.style.boxShadow = "0 0 25px #00f0ff, 0 0 50px #00f0ff";
 }
 
-
-/* PLAYER IFRAME (VERSÃO FINAL CORRETA) */
+/* PLAYER IFRAME */
 function playIframe(url){
     const box = document.getElementById('playerBox');
 
     box.innerHTML = `
         <iframe 
-            src="${url}" 
-            style="width:100%; height:100%; border:none;"
-            allow="autoplay; fullscreen"
-            allowfullscreen>
+        src="${url}" 
+        style="width:100%; height:100%; border:none;"
+        allowfullscreen>
         </iframe>
     `;
-
-    // efeito neon
-    box.style.boxShadow = "0 0 25px #00f0ff, 0 0 50px #00f0ff";
-
-    // fallback automático
-    setTimeout(() => {
-        const iframe = box.querySelector("iframe");
-
-        try {
-            if (!iframe || iframe.src === "" || iframe.contentWindow.length === 0) {
-                window.open(url, "_blank");
-            }
-        } catch (e) {
-            window.open(url, "_blank");
-        }
-    }, 3000);
 }
 
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+
+/* PLAYER HLS */
+function play(url){
+    const box = document.getElementById('playerBox');
+
+    box.innerHTML = '<video id="player" controls style="width:100%; height:100%;"></video>';
+    const video = document.getElementById('player');
+
+    if(Hls.isSupported()){
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    }else{
+        video.src = url;
+    }
+
+    video.play();
+}
+
+/* PLAYER IFRAME */
+function playIframe(url){
+    const box = document.getElementById('playerBox');
+
+    box.innerHTML = `
+        <iframe 
+        src="${url}" 
+        style="width:100%; height:100%; border:none;"
+        allowfullscreen>
+        </iframe>
+    `;
+}
+
+</script><script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<script>
+function play(url){
+    const box = document.getElementById('playerBox');
+
+    box.innerHTML = '<video id="player" controls style="width:100%; height:100%;"></video>';
+    const video = document.getElementById('player');
+
+    if(Hls.isSupported()){
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    }else{
+        video.src = url;
+    }
+
+    }
+
+    video.play();
+}
+
+function playIframe(url){
+    const box = document.getElementById('playerBox');
+
+    box.innerHTML = `
+        <iframe 
+        src="${url}" 
+        style="width:100%; height:100%; border:none;"
+        allowfullscreen
+        sandbox="allow-scripts allow-same-origin"
+        referrerpolicy="no-referrer">
+        </iframe>
+    `;
+}
 </script>
 
 </body>
